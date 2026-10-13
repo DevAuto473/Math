@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مصادر البحث</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
+    
+    body {
+      background-color: #000000;
+      color: #e4e4e7;
+    }
+
+    /* بطاقة بتصميم داكن وثابت بدون ارتفاع */
+    .glass-box {
+      position: relative;
+      overflow: hidden;
+      background: rgba(14, 14, 18, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    /* ضمان بقاء نصوص وأيقونات البطاقة واضحة فوق تأثير الشفق */
+    .glass-box > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* طبقة تأثير الشفق القطبي (Aurora) الخافت والناعم */
+    .glass-box::before {
+      content: '';
+      position: absolute;
+      inset: -35%;
+      background: radial-gradient(circle at 25% 30%, rgba(16, 185, 129, 0.16), transparent 50%),
+                  radial-gradient(circle at 75% 25%, rgba(56, 189, 248, 0.18), transparent 50%),
+                  radial-gradient(circle at 50% 85%, rgba(168, 85, 247, 0.16), transparent 55%);
+      filter: blur(28px);
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* حركة انسيابية لطيفة جداً لتموجات الشفق أثناء التحويم */
+    @keyframes aurora-flow {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(3%, -3%) scale(1.05);
+      }
+    }
+
+    .glass-box:hover::before {
+      opacity: 1;
+      animation: aurora-flow 8s ease-in-out infinite alternate;
+    }
+    
+    /* إطار ناعم متناسق مع ألوان الشفق بدلاً من الأبيض الصريح */
+    .glass-box:hover {
+      border-color: rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.12),
+                  0 0 35px -10px rgba(168, 85, 247, 0.1);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center relative overflow-x-hidden selection:bg-zinc-800 selection:text-white">
+
+  <!-- طبقة الصورة المطلوبة بشفافية خافتة -->
+  <div 
+    class="fixed inset-0 z-0 bg-cover bg-center pointer-events-none opacity-[0.14] mix-blend-luminosity filter contrast-125"
+    style="background-image: url('https://i.pinimg.com/736x/58/5c/fa/585cfa76eb76a65940b8c03f028a8489.jpg');">
+  </div>
+  
+  <!-- طبقة التدرج اللوني لضمان السواد النقي ووضوح العناصر -->
+  <div class="fixed inset-0 z-0 pointer-events-none bg-gradient-to-b from-black/85 via-[#050505]/95 to-black"></div>
+
+  <main class="relative z-10 w-full max-w-4xl mx-auto px-5 py-16 sm:py-24 flex flex-col items-center justify-center flex-grow">
+    
+    <!-- العنوان الرئيسي الصريح -->
+    <header class="text-center mb-10 sm:mb-14">
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-3">
+        مصادر البحث
+      </h1>
+      <p class="text-zinc-400 text-sm sm:text-base font-normal">
+        اضغط على أي مربع للانتقال مباشرة إلى المرجع
+      </p>
+    </header>
+
+    <!-- شبكة المربعات الأربعة (2 × 2) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full">
+      
+      <!-- المربع الأول: مفهوم الدالة الرياضية -->
+      <a 
+        href="https://mathworld.wolfram.com/Function.html" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="glass-box group rounded-2xl p-6 flex items-center justify-between cursor-pointer">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-zinc-700 transition">
+            <i class="fa-solid fa-infinity text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-semibold text-white group-hover:text-white transition">
+              مفهوم الدالة الرياضية
+            </h2>
+            <span class="text-xs text-zinc-400 font-mono">Wolfram MathWorld</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-500 group-hover:text-white transition group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </div>
+      </a>
+
+      <!-- المربع الثاني: الدوال التربيعية -->
+      <a 
+        href="https://openstax.org/books/college-algebra-2e/pages/5-1-quadratic-functions" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="glass-box group rounded-2xl p-6 flex items-center justify-between cursor-pointer">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-zinc-700 transition">
+            <i class="fa-solid fa-bezier-curve text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-semibold text-white group-hover:text-white transition">
+              الدوال التربيعية
+            </h2>
+            <span class="text-xs text-zinc-400 font-mono">OpenStax College Algebra</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-500 group-hover:text-white transition group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </div>
+      </a>
+
+      <!-- المربع الثالث: الدوال الأسية واللوغاريتمية -->
+      <a 
+        href="https://openstax.org/books/college-algebra-2e/pages/6-7-exponential-and-logarithmic-models" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="glass-box group rounded-2xl p-6 flex items-center justify-between cursor-pointer">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-zinc-700 transition">
+            <i class="fa-solid fa-chart-line text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-semibold text-white group-hover:text-white transition">
+              الدوال الأسية واللوغاريتمية
+            </h2>
+            <span class="text-xs text-zinc-400 font-mono">OpenStax College Algebra</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-500 group-hover:text-white transition group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </div>
+      </a>
+
+      <!-- المربع الرابع: الدوال المثلثية والنمذجة -->
+      <a 
+        href="https://openstax.org/books/precalculus-2e/pages/7-6-modeling-with-trigonometric-functions" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="glass-box group rounded-2xl p-6 flex items-center justify-between cursor-pointer">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-zinc-700 transition">
+            <i class="fa-solid fa-wave-square text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-semibold text-white group-hover:text-white transition">
+              الدوال المثلثية والنمذجة
+            </h2>
+            <span class="text-xs text-zinc-400 font-mono">OpenStax Precalculus</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-500 group-hover:text-white transition group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </div>
+      </a>
+
+      <!-- المربع الخامس: بيتر غوستاف دركليه وتاريخ مفهوم الدالة -->
+      <a 
+        href="https://www.britannica.com/biography/Peter-Gustav-Lejeune-Dirichlet" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="glass-box group rounded-2xl p-6 flex items-center justify-between cursor-pointer sm:col-span-2 sm:max-w-md sm:w-full sm:mx-auto">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-zinc-700 transition">
+            <i class="fa-solid fa-user-graduate text-lg"></i>
+          </div>
+          <div>
+            <h2 class="text-base sm:text-lg font-semibold text-white group-hover:text-white transition">
+              بيتر غوستاف لوجون دركليه
+            </h2>
+            <span class="text-xs text-zinc-400 font-mono">Encyclopædia Britannica</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-500 group-hover:text-white transition group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="relative z-10 py-6 text-center text-xs text-zinc-600">
+    مراجع البحث العلمي
+  </footer>
+
+</body>
+</html>
